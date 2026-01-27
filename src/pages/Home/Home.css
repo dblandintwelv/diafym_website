@@ -90,6 +90,7 @@ main {
   line-height: 1.2;
   background: linear-gradient(45deg, #725AC1, #725AC1);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 100%;
   text-align: center;
