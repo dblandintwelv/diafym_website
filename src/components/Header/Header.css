@@ -175,7 +175,7 @@
     width: 80%;
     max-width: 400px;
     height: 100vh;
-    background: rgba(255, 0, 0, 0.7); /* DEBUG: rouge translucide pour voir le panneau */
+    background: #ffffff;
     padding: 6rem 2rem 2rem;
     transition: right 0.3s ease;
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
@@ -722,16 +722,18 @@
     width: 80%;
     max-width: 400px;
     height: 100vh;
-    background: rgba(255, 0, 0, 0.7); /* DEBUG: rouge translucide pour voir le panneau */
+    background: rgba(255, 0, 0, 0.9) !important; /* DEBUG: rouge très visible */
     padding: 6rem 2rem 2rem;
     transition: right 0.3s ease;
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: flex !important;
     flex-direction: column;
+    z-index: 10000 !important; /* DEBUG: z-index très élevé */
+    border-left: 5px solid #000 !important; /* DEBUG: bordure noire pour voir les limites */
   }
 
   .nav-menu.open {
-    right: 0;
+    right: 0 !important;
   }
 
   .nav-menu ul {
