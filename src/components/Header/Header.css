@@ -151,6 +151,7 @@
     position: relative;
     right: 0;
     margin-left: auto;
+    z-index: 10001 !important; /* Au-dessus du panneau Portal */
   }
 
   .header {
@@ -158,6 +159,8 @@
     background-color: white;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y: visible !important; /* Permet au panneau de dépasser */
+    z-index: 10001 !important; /* Au-dessus du panneau Portal */
   }
 
   .logo {
@@ -171,18 +174,23 @@
   .nav-menu {
     position: fixed;
     top: 0;
+    bottom: 0;
     right: -100%;
     width: 80%;
     max-width: 400px;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     background: #ffffff;
     padding: 6rem 2rem 2rem;
+    margin: 0;
     transition: right 0.3s ease;
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 999; /* Sous le header (10001) et le burger-menu (10001) */
     overflow-y: auto;
+    box-sizing: border-box;
   }
 
   .nav-menu.open {
@@ -206,6 +214,9 @@
     padding: 0 1rem;
     width: 100%;
     max-width: 100%;
+    overflow: visible !important; /* Permet au panneau de dépasser */
+    position: relative;
+    z-index: 10002 !important; /* Au-dessus du panneau Portal */
   }
 
   .desktop-demo-button {
@@ -718,22 +729,27 @@
   .nav-menu {
     position: fixed;
     top: 0;
+    bottom: 0;
     right: -100%;
     width: 80%;
     max-width: 400px;
     height: 100vh;
-    background: rgba(255, 0, 0, 0.9) !important; /* DEBUG: rouge très visible */
+    min-height: 100vh;
+    max-height: 100vh;
+    background: #ffffff;
     padding: 6rem 2rem 2rem;
+    margin: 0;
     transition: right 0.3s ease;
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
-    display: flex !important;
+    display: flex;
     flex-direction: column;
-    z-index: 10000 !important; /* DEBUG: z-index très élevé */
-    border-left: 5px solid #000 !important; /* DEBUG: bordure noire pour voir les limites */
+    z-index: 999; /* Sous le header (10001) et le burger-menu (10001) */
+    overflow-y: auto;
+    box-sizing: border-box;
   }
 
   .nav-menu.open {
-    right: 0 !important;
+    right: 0;
   }
 
   .nav-menu ul {

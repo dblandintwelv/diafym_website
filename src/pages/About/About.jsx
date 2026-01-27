@@ -17,7 +17,7 @@ const About = () => {
           <h2>Notre histoire</h2>
           <p>Chez Diafym RH, notre mission est de dynamiser et développer les entreprises grâce à une approche RH humaine, inclusive et efficace.</p>
           <p>Nous mettons l’humain au centre de chaque démarche, en valorisant les parcours uniques et en favorisant la diversité et l’égalité des chances.</p>
-          <p>Notre équipe est à taille humaine, animée par une passion commune : mettre les bonnes personnes aux bons endroits, au bon moment</p>
+          <p>Notre équipe est à taille humaine, animée par une passion commune : mettre les bonnes personnes aux bons endroits, au bon moment.</p>
           <div className="team-grid">
             <div className="team-member">
               <img src="/assets/images/team/Fanny.png" alt="Photo de Fanny" />
