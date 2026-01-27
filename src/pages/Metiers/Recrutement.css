@@ -1,0 +1,23 @@
+/* Bloc "Notre but" avec fond violet */
+.alternating-block .text-content .reconversion-goal-box {
+  background-color: #725AC1;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.alternating-block .text-content .reconversion-goal-box p {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.alternating-block .text-content .reconversion-goal-box p:last-child {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.alternating-block .text-content .reconversion-goal-box strong {
+  color: #ffffff;
+  font-weight: 600;
+}

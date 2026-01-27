@@ -1,0 +1,339 @@
+.ressources-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ressources-hero {
+  background-color: #f8fafc;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.ressources-hero h1 {
+  font-size: 3rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.ressources-hero p {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.ressources-content {
+  flex: 1;
+  padding: 4rem 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ressources-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ressources-section h2 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.ressources-section p {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-iframe-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 1832px; /* Hauteur minimale basée sur la hauteur originale de l'iframe */
+}
+
+.contact-iframe-container iframe {
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  min-height: 1832px; /* Hauteur minimale basée sur la hauteur originale de l'iframe */
+}
+
+.alternating-blocks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.alternating-block {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.alternating-block .text-content {
+  flex: 1;
+}
+
+.alternating-block .text-content h3 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.alternating-block .text-content p {
+  font-size: 1.25rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.alternating-block .image-content {
+  flex: 1;
+}
+
+.alternating-block .image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.case-button {
+  display: inline-block;
+  background-color: #725AC1;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.case-button:hover {
+  background-color: #725AC1;
+}
+
+.contact-info {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+}
+
+.contact-person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #f8fafc;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.contact-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-details {
+  text-align: center;
+}
+
+.contact-details h3 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-details h4 {
+  font-size: 1.25rem;
+  color: #725AC1;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+  color: #725AC1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+  color: #725AC1;
+  text-decoration: underline;
+}
+
+.contact-rdv {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.contact-rdv h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contact-iframe-container {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .alternating-block {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .alternating-block .text-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .alternating-block .text-content p {
+    font-size: 1.1rem;
+  }
+
+  .contact-person {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .contact-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .contact-details h3 {
+    font-size: 1.75rem;
+  }
+
+  .contact-details h4 {
+    font-size: 1.1rem;
+  }
+
+  .contact-rdv h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.tarif-simulator-container {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.tarif-simulator-title {
+  margin-bottom: 1.5rem;
+}
+
+.tarif-intro {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.tarif-intro .intro-lead {
+  margin: 0 0 0.75rem 0;
+  color: #111827;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tarif-intro .intro-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #eff6ff; /* bleu très clair */
+  border: 1px solid #dbeafe; /* bord bleu clair */
+  color: #725AC1; /* bleu texte */
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  margin: 0.5rem 0 0.75rem 0;
+}
+
+.tarif-intro .badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #725AC1; /* bleu principal */
+  color: #fff;
+}
+
+.tarif-intro .intro-bullets {
+  margin: 0.4rem 0 0.5rem 0;
+  padding-left: 1.25rem;
+  color: #374151;
+}
+
+.tarif-intro .intro-bullets li {
+  list-style: disc;
+  margin: 0.15rem 0;
+}
+
+.tarif-intro .intro-note {
+  margin-top: 0.75rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .tarif-simulator-container {
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+  
+  .ressources-content {
+    padding: 4rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tarif-simulator-container {
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+  
+  .ressources-content {
+    padding: 4rem 0.2rem;
+  }
+} 

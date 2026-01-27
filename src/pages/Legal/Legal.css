@@ -1,0 +1,39 @@
+.legal-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.legal-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.legal-section {
+  margin-bottom: 4rem;
+}
+
+.legal-section h2 {
+  font-size: 1.8rem;
+  color: #725AC1;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.legal-section p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .legal-content {
+    padding: 3rem 1rem;
+  }
+
+  .legal-section h2 {
+    font-size: 1.5rem;
+  }
+} 

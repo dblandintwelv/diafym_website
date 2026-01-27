@@ -1,0 +1,577 @@
+.tarif-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: #f4f6fd;
+  border-radius: 0 0 12px 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 1px 6px #725AC111; /* ombre bleue */
+}
+
+.select-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.select-field label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.select-field select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  color: #374151;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.select-field select:hover {
+  border-color: #725AC1;
+  box-shadow: 0 0 0 3px rgba(114, 90, 193, 0.1);
+}
+
+.select-field select:focus {
+  outline: none;
+  border-color: #725AC1;
+  box-shadow: 0 0 0 3px rgba(114, 90, 193, 0.2);
+}
+
+.select-field select option {
+  padding: 0.5rem;
+  background: white;
+  color: #374151;
+}
+
+.select-field input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  color: #374151;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.select-field input[type="text"]:focus {
+  outline: none;
+  border-color: #725AC1;
+  box-shadow: 0 0 0 3px rgba(114, 90, 193, 0.2);
+}
+
+.tarif-field {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tarif-label {
+  width: 350px;
+  font-weight: 500;
+  flex-shrink: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.label-main {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.info-icon {
+  cursor: help;
+  color: #725AC1; /* bleu icône */
+  font-size: 1.1em;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #725AC1;
+  border-radius: 50%;
+  background: white;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85em;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 8px;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.info-icon:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tarif-label-min {
+  color: #888;
+}
+
+.tarif-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tarif-input {
+  width: 80px;
+  padding: 6px 10px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  background: #f5f7fa;
+  font-size: 1.05em;
+  transition: border 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.tarif-input:focus {
+  border: 1.5px solid #6c63ff;
+  outline: none;
+  box-shadow: 0 0 0 2px #725AC122;
+}
+
+.tarif-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #725AC1;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px #0001;
+}
+
+.tarif-btn:hover:not(:disabled),
+.tarif-btn:focus:not(:disabled) {
+  background: #dbeafe;
+  box-shadow: 0 2px 6px #725AC122;
+}
+
+.tarif-btn:disabled {
+  background: #f0f0f0;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.tarif-price {
+  color: #725AC1;
+  font-weight: 500;
+  margin-left: 0.3rem;
+  min-width: 85px;
+  text-align: right;
+}
+
+.tarif-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.tarif-minimum {
+  color: #888;
+  font-size: 0.75em;
+  margin-left: 0;
+}
+
+.tarif-users {
+  color: #666;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.tarif-help {
+  font-size: 0.95em;
+  color: #666;
+}
+
+.devis-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.devis-button {
+  width: auto;
+  min-width: 250px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #725AC1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.devis-button:hover {
+  background-color: #725AC1;
+  box-shadow: 0 4px 12px #725AC14d;
+}
+
+.devis-form {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #fdfdff;
+  border: 1px solid #e0e6fa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.devis-form input,
+.devis-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  color: #333;
+}
+
+.devis-form input::placeholder,
+.devis-form textarea::placeholder {
+  color: #999;
+}
+
+.devis-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-field label {
+  font-size: 0.9em;
+  color: #374151;
+  font-weight: 500;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.checkbox-container label {
+  font-size: 0.95em;
+  color: #333;
+  cursor: pointer;
+  margin: 0;
+}
+
+.tarif-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+  justify-content: center;
+  background: #f4f6fd;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+}
+
+.tarif-tab {
+  padding: 0.6rem 1.5rem;
+  background: #f4f6fd;
+  border: none;
+  border-radius: 0;
+  font-size: 1.08em;
+  font-weight: 500;
+  color: #725AC1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px #0001;
+  position: relative;
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.tarif-tab.actif {
+  background: #dbeafe;
+  color: #222;
+  box-shadow: 0 2px 8px #725AC122;
+  z-index: 1;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.tarif-tab:not(.actif):hover {
+  background: #eff6ff;
+  color: #725AC1;
+}
+
+.tarif-badge {
+  background: #725AC1;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.85em;
+  padding: 2px 8px;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .tarif-field {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .tarif-label {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .tarif-price {
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    max-width: 280px;
+    width: 90vw;
+    z-index: 1001;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding: 1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+    height: auto;
+    min-height: fit-content;
+  }
+
+  .tooltip::after {
+    display: none;
+  }
+}
+
+.tooltip ul {
+  margin: 0;
+  padding-left: 1rem;
+  text-align: left;
+  list-style: none;
+  text-align-last: left;
+}
+
+.tooltip li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.3rem;
+  word-spacing: normal;
+  letter-spacing: normal;
+  text-align: left;
+  text-align-last: left;
+}
+
+.tooltip li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-weight: bold;
+} 
+
+/* --- Réglette salariés → licences --- */
+.tarif-slider-card {
+  background: #f4f6fd;
+  border-radius: 12px 12px 0 0;
+  padding: 1rem 1rem 0.5rem 1rem;
+  box-shadow: 0 1px 6px #725AC111;
+}
+
+.tarif-slider-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; /* plus d'espace entre les textes au-dessus de la réglette */
+  margin-bottom: 0.6rem;
+}
+
+.tarif-slider-title {
+  font-weight: 600;
+}
+
+.tarif-slider-sub {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.tarif-current-scope {
+  color: #725AC1;
+  font-size: 1.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.tarif-current-scope strong {
+  display: inline-block;
+  background: #725AC1;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 999px;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px #725AC133;
+  font-weight: 600;
+}
+
+.tarif-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.tarif-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+  outline: none;
+  margin-bottom: 12px; /* espace sous la réglette */
+}
+
+.tarif-range::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+.tarif-range::-moz-range-track {
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+.tarif-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #725AC1;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px #725AC155;
+  cursor: pointer;
+  margin-top: -10px; /* ajustement fin du centrage */
+}
+
+.tarif-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #725AC1;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px #725AC155;
+  cursor: pointer;
+  /* Firefox centre généralement bien, mais on assure une cohérence visuelle */
+}
+
+/* ticks supprimés */
+
+.tarif-ticks .tick.active {
+  color: #222;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.tarif-proposal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  color: #333;
+}
+
+.tarif-proposal .chip {
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
+  color: #725AC1;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.9em;
+}
+
+.tarif-note {
+  font-size: 0.85em;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+}

@@ -1,0 +1,8 @@
+# www.robotstxt.org
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Référence au sitemap
+Sitemap: https://twelv.fr/sitemap.xml 

@@ -1,0 +1,151 @@
+.partners-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partners-section h2 {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  width: 100%;
+}
+
+.partners-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: hidden;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.partners-carousel-inner {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 30s linear infinite;
+}
+
+.partners-carousel-inner:hover {
+  animation-play-state: paused;
+}
+
+.partner-link {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.partner-link:hover {
+  transform: scale(1.05);
+}
+
+.partner-link img {
+  max-width: 150px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partner-link:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-33.333%));
+  }
+}
+
+.partners-carousel::before,
+.partners-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.partners-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Styles responsives */
+@media (max-width: 1200px) {
+  .partners-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .partners-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .partners-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .partner-link img {
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 2rem 1rem;
+  }
+
+  .partners-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .partners-carousel {
+    gap: 1.5rem;
+  }
+
+  .partner-link img {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .partners-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .partners-carousel {
+    gap: 1rem;
+  }
+
+  .partner-link img {
+    max-width: 100px;
+  }
+} 

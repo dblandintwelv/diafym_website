@@ -1,0 +1,147 @@
+.footer {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 1rem 2rem 0.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+.footer-logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 90px;
+  width: auto;
+}
+
+.footer-sections-container {
+  display: flex;
+  gap: 4rem;
+  flex: 2;
+}
+
+.footer-section {
+  margin-left: 0;
+}
+
+.footer-section h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-section ul li a {
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-section ul li a:hover {
+  color: white;
+}
+
+.footer-section p {
+  color: #e5e7eb;
+  margin-bottom: 0.25rem;
+}
+
+.footer-section p a {
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-section p a:hover {
+  color: white;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+  opacity: 0.8;
+}
+
+.footer-social img {
+  height: 24px;
+  width: auto;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    padding: 1rem 1rem;
+  }
+
+  .footer-logo {
+    margin-bottom: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-sections-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .footer-section {
+    flex: 1;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+
+  .footer-section p,
+  .footer-section ul li a {
+    font-size: 0.8rem;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+  }
+} 
