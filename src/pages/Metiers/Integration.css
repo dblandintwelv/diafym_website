@@ -136,6 +136,11 @@
 }
 
 @media (max-width: 768px) {
+  .recrutement-features .features-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .recrutement-bottom-cta-inner {
     grid-template-columns: 1fr;
   }
