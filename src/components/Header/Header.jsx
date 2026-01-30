@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { createPortal } from 'react-dom'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [key, setKey] = useState(0)
   const dropdownRef = useRef(null)
+  const mobileMenuRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,8 @@ const Header = () => {
     }
 
     const handleClickOutside = (event) => {
+      // Ne pas fermer les dropdowns quand on clique dans le menu mobile (sinon les boutons sont démontés avant le clic)
+      if (mobileMenuRef.current?.contains(event.target)) return
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsProductsOpen(false)
         setIsResourcesOpen(false)
@@ -51,6 +54,14 @@ const Header = () => {
       setIsResourcesOpen(false)
       setKey(prev => prev + 1)
     }
+  }
+
+  /** Clic sur un lien du menu mobile : navigation + fermeture du menu */
+  const handleMobileLinkClick = (path) => {
+    navigate(path)
+    setIsMenuOpen(false)
+    setIsProductsOpen(false)
+    setIsResourcesOpen(false)
   }
 
   return (
@@ -124,13 +135,14 @@ const Header = () => {
           <span></span>
         </button>
 
-        {/* Navigation mobile : panneau latéral (portal) */}
-        {isMenuOpen && createPortal(
-          <nav className={`nav-menu nav-menu-mobile ${isMenuOpen ? 'open' : ''}`}>
+        {/* Navigation mobile : panneau latéral (dans le DOM du header pour garder le contexte Router) */}
+        {isMenuOpen && (
+          <nav ref={mobileMenuRef} className={`nav-menu nav-menu-mobile open`} aria-hidden="false">
             <ul>
               <li className="products-dropdown">
                 <div className="dropdown-wrapper">
-                  <button 
+                  <button
+                    type="button"
                     className="dropdown-button"
                     onClick={handleProductsClick}
                   >
@@ -141,15 +153,15 @@ const Header = () => {
                       <div className="dropdown-section">
                         <h4>Métiers</h4>
                         <ul>
-                          <li><Link to="/recrutement" onClick={toggleMenu}>Recrutement</Link></li>
-                          <li><Link to="/integration" onClick={toggleMenu}>Intégration</Link></li>
-                          <li><Link to="/reconversion" onClick={toggleMenu}>Reconversion professionnelle</Link></li>
+                          <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/recrutement')}>Recrutement</button></li>
+                          <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/integration')}>Intégration</button></li>
+                          <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/reconversion')}>Reconversion professionnelle</button></li>
                         </ul>
                       </div>
                       <div className="dropdown-section">
                         <h4>Formation</h4>
                         <ul>
-                          <li><Link to="/formations" onClick={toggleMenu}>Nos formations</Link></li>
+                          <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/formations')}>Nos formations</button></li>
                         </ul>
                       </div>
                     </div>
@@ -158,7 +170,8 @@ const Header = () => {
               </li>
               <li className="resources-dropdown">
                 <div className="dropdown-wrapper">
-                  <button 
+                  <button
+                    type="button"
                     className="dropdown-button"
                     onClick={handleResourcesClick}
                   >
@@ -168,7 +181,7 @@ const Header = () => {
                     <div className="dropdown-content">
                       <div className="dropdown-section">
                         <ul>
-                          <li><Link to="/ressources/contact" onClick={toggleMenu}>Contact</Link></li>
+                          <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/ressources/contact')}>Contact</button></li>
                         </ul>
                       </div>
                     </div>
@@ -176,9 +189,8 @@ const Header = () => {
                 </div>
               </li>
             </ul>
-            <Link to="/ressources/contact" className="mobile-demo-button" onClick={toggleMenu}>Prendre rendez-vous</Link>
-          </nav>,
-          document.body
+            <button type="button" className="mobile-demo-button" onClick={() => handleMobileLinkClick('/ressources/contact')}>Prendre rendez-vous</button>
+          </nav>
         )}
 
         <Link to="/ressources/contact" className="desktop-demo-button">Prendre rendez-vous</Link>
