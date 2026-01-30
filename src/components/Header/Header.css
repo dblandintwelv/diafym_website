@@ -45,6 +45,16 @@
   margin: 0 auto;
 }
 
+/* Desktop : nav toujours visible dans le header */
+.nav-menu-desktop {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu-mobile {
+  display: none; /* géré par media query et .open */
+}
+
 .nav-menu ul {
   display: flex;
   gap: 2rem;
@@ -154,6 +164,10 @@
     z-index: 10001 !important; /* Au-dessus du panneau Portal */
   }
 
+  .nav-menu-desktop {
+    display: none !important;
+  }
+
   .header {
     height: 70px;
     background-color: white;
@@ -171,7 +185,11 @@
     height: 75px;
   }
 
-  .nav-menu {
+  .nav-menu-mobile {
+    display: flex;
+  }
+
+  .nav-menu.nav-menu-mobile {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -726,38 +744,16 @@
     display: block;
   }
 
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 400px;
-    height: 100vh;
-    min-height: 100vh;
-    max-height: 100vh;
-    background: #ffffff;
-    padding: 6rem 2rem 2rem;
-    margin: 0;
-    transition: right 0.3s ease;
-    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    z-index: 999; /* Sous le header (10001) et le burger-menu (10001) */
-    overflow-y: auto;
-    box-sizing: border-box;
-  }
-
-  .nav-menu.open {
+  .nav-menu.nav-menu-mobile.open {
     right: 0;
   }
 
-  .nav-menu ul {
+  .nav-menu.nav-menu-mobile ul {
     flex-direction: column;
     gap: 1.5rem;
   }
 
-  .nav-menu a:not(.dropdown-button) {
+  .nav-menu.nav-menu-mobile a:not(.dropdown-button) {
     font-size: 1.1rem !important;
     font-weight: 300 !important;
     display: block;

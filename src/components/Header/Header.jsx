@@ -60,6 +60,59 @@ const Header = () => {
           <img src="/assets/Logo-Diafym.png" alt="Diafym-RH Logo" />
         </Link>
 
+        {/* Navigation desktop : toujours visible sur grand écran */}
+        <nav className="nav-menu nav-menu-desktop" ref={dropdownRef}>
+          <ul>
+            <li className="products-dropdown">
+              <div className="dropdown-wrapper">
+                <button 
+                  className="dropdown-button"
+                  onClick={handleProductsClick}
+                >
+                  Services
+                </button>
+                {isProductsOpen && (
+                  <div className="dropdown-content">
+                    <div className="dropdown-section">
+                      <h4>Métiers</h4>
+                      <ul>
+                        <li><Link to="/recrutement">Recrutement</Link></li>
+                        <li><Link to="/integration">Intégration</Link></li>
+                        <li><Link to="/reconversion">Reconversion professionnelle</Link></li>
+                      </ul>
+                    </div>
+                    <div className="dropdown-section">
+                      <h4>Formation</h4>
+                      <ul>
+                        <li><Link to="/formations">Nos formations</Link></li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </li>
+            <li className="resources-dropdown">
+              <div className="dropdown-wrapper">
+                <button 
+                  className="dropdown-button"
+                  onClick={handleResourcesClick}
+                >
+                  Ressources
+                </button>
+                {isResourcesOpen && (
+                  <div className="dropdown-content">
+                    <div className="dropdown-section">
+                      <ul>
+                        <li><Link to="/ressources/contact">Contact</Link></li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </li>
+          </ul>
+        </nav>
+
         <button 
           key={key}
           className={`burger-menu ${isMenuOpen ? 'open' : ''}`} 
@@ -71,8 +124,9 @@ const Header = () => {
           <span></span>
         </button>
 
+        {/* Navigation mobile : panneau latéral (portal) */}
         {isMenuOpen && createPortal(
-          <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`} ref={dropdownRef}>
+          <nav className={`nav-menu nav-menu-mobile ${isMenuOpen ? 'open' : ''}`}>
             <ul>
               <li className="products-dropdown">
                 <div className="dropdown-wrapper">
@@ -114,11 +168,6 @@ const Header = () => {
                     <div className="dropdown-content">
                       <div className="dropdown-section">
                         <ul>
-                          {/*
-                          <li><Link to="/ressources/tarifs" onClick={toggleMenu}>Notre offre</Link></li>
-                          <li><Link to="/ressources/cas-client" onClick={toggleMenu}>Cas clients</Link></li>
-                          <li><a href="https://blog.diafym-rh.fr/blog-de-diafym-rh" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>Blog</a></li>
-                          */}
                           <li><Link to="/ressources/contact" onClick={toggleMenu}>Contact</Link></li>
                         </ul>
                       </div>
