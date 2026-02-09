@@ -5,6 +5,7 @@ import Integration from './pages/Metiers/Integration'
 import Recrutement from './pages/Metiers/Recrutement'
 import Reconversion from './pages/Metiers/Reconversion'
 import NosFormations from './pages/Formation/NosFormations'
+import VAE from './pages/Formation/VAE'
 import CasClient from './pages/Ressources/CasClient'
 import Blog from './pages/Ressources/Blog'
 import Tarifs from './pages/Ressources/Tarifs'
@@ -24,6 +25,7 @@ function App() {
       <Route path="/recrutement" element={<Recrutement />} />
       <Route path="/reconversion" element={<Reconversion />} />
       <Route path="/formations" element={<NosFormations />} />
+      <Route path="/formations/vae" element={<VAE />} />
       <Route path="/ressources/cas-client" element={<CasClient />} />
       <Route path="/ressources/blog" element={<Blog />} />
       <Route path="/ressources/tarifs" element={<Tarifs />} />

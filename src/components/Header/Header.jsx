@@ -96,6 +96,7 @@ const Header = () => {
                       <h4>Formation</h4>
                       <ul>
                         <li><Link to="/formations">Nos formations</Link></li>
+                        <li><Link to="/formations/vae">VAE</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -162,6 +163,7 @@ const Header = () => {
                         <h4>Formation</h4>
                         <ul>
                           <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/formations')}>Nos formations</button></li>
+                          <li><button type="button" className="nav-menu-mobile-link" onClick={() => handleMobileLinkClick('/formations/vae')}>VAE</button></li>
                         </ul>
                       </div>
                     </div>
