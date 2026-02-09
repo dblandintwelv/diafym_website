@@ -66,6 +66,33 @@ const VAE = () => {
           </div>
         </section>
       </main>
+
+      <section className="recrutement-bottom-cta">
+        <div className="recrutement-bottom-cta-inner">
+          <div className="recrutement-bottom-item">
+            <img
+              src="/assets/images/RecrutementPicto1.svg"
+              alt="Carte de France"
+            />
+            <p>Intervention sur toute la France</p>
+          </div>
+          <div className="recrutement-bottom-item">
+            <img
+              src="/assets/images/RecrutementPicto2.svg"
+              alt="Horloge"
+            />
+            <p>Réactivité & proximité</p>
+          </div>
+          <div className="recrutement-bottom-item">
+            <img
+              src="/assets/images/RecrutementPicto3.svg"
+              alt="Document"
+            />
+            <p>Un suivi de chaque candidat</p>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

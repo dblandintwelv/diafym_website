@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <div className="footer-section">
             <h3>Contact</h3>
-            <p>Email : <a href="mailto:hello@diafym-rh.com">hello@diafym-rh.fr</a></p>
+            <p>Email : <a href="mailto:hello@diafym-rh.com">hello@diafym-rh.com</a></p>
             <p>Téléphone : <a href="tel:+33519081545">05 19 08 15 45</a></p>
             <p>2A rue Georges Claude<br />31840 Aussonne</p>
           </div>
