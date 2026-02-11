@@ -77,32 +77,29 @@ const NosFormations = () => {
               </li>
             </ul>
             <div className="formations-secondary-cta">
-              <a 
-                href="/assets/pdfs/calendrier-de-formation-DIAFYM-RH.pdf" 
-                download 
-                className="cta-button hero-cta-button"
-              >
-                <span className="hero-cta-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="hero-cta-icon-svg">
-                    <path d="M12 3a1 1 0 0 1 1 1v9.086l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5A1 1 0 0 1 7.707 9.793L11 13.086V4a1 1 0 0 1 1-1z" />
-                    <path d="M5 17a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z" />
-                  </svg>
-                </span>
-                <span>Calendrier de formation</span>
-              </a>
-              <a 
-                href="/assets/pdfs/Programme-Recruter-et-Integrer-un-collaborateur.pdf" 
-                download 
-                className="cta-button hero-cta-button"
-              >
-                <span className="hero-cta-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" className="hero-cta-icon-svg">
-                    <path d="M12 3a1 1 0 0 1 1 1v9.086l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5A1 1 0 0 1 7.707 9.793L11 13.086V4a1 1 0 0 1 1-1z" />
-                    <path d="M5 17a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z" />
-                  </svg>
-                </span>
-                <span>Programme de formation</span>
-              </a>
+              <div className="formations-dates-card">
+                <h4 className="formations-dates-title">Prochaines sessions 2026</h4>
+                <ul className="formations-dates-list">
+                  <li className="formations-date-item">Du 8 au 10 avril 2026</li>
+                  <li className="formations-date-item">Du 17 au 19 juin 2026</li>
+                  <li className="formations-date-item">Du 16 au 18 septembre 2026</li>
+                  <li className="formations-date-item">Du 18 au 20 novembre 2026</li>
+                </ul>
+
+                <a 
+                  href="/pdfs/2026_REC_x_Programme-Recruter-et-Integrer-un-collaborateur.pdf" 
+                  download 
+                  className="cta-button hero-cta-button formations-dates-button"
+                >
+                  <span className="hero-cta-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="hero-cta-icon-svg">
+                      <path d="M12 3a1 1 0 0 1 1 1v9.086l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5A1 1 0 0 1 7.707 9.793L11 13.086V4a1 1 0 0 1 1-1z" />
+                      <path d="M5 17a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z" />
+                    </svg>
+                  </span>
+                  <span>Programme de formation</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -112,6 +109,42 @@ const NosFormations = () => {
         </h3>
 
         <AlternatingBlocks blocks={blocks} />
+
+        <section className="formations-handicap">
+          <h3>Information Handicap</h3>
+          <p>
+            Nos formations peuvent être accessibles aux personnes en situation de handicap.
+          </p>
+          <p>
+            Chaque situation étant unique, nous vous demandons de préciser à l’inscription votre handicap. Nous pourrons ainsi confirmer l’ensemble des possibilités d’accueil et vous permettre de suivre la formation dans les meilleures conditions en accord avec votre employeur.
+          </p>
+          <p>
+            Pour toutes informations complémentaires, nous vous conseillons les structures suivantes :{' '}
+            <a href="https://www.onisep.fr/inclusion-et-handicap" target="_blank" rel="noopener noreferrer">ONISEP</a>,{' '}
+            <a href="https://www.agefiph.fr/" target="_blank" rel="noopener noreferrer">AGEFIPH</a> et{' '}
+            <a href="https://www.fiphfp.fr/" target="_blank" rel="noopener noreferrer">FIPHFP</a>.
+          </p>
+        </section>
+
+        <section className="formations-qualiopi">
+          <div className="formations-qualiopi-text">
+            <h3>Certification Qualiopi</h3>
+            <p>
+              Diafym RH est certifié Qualiopi au titre de ses actions de formation. Cette certification atteste de la qualité de notre processus de conception, de réalisation et de suivi des parcours de formation.
+            </p>
+            <p>
+              Elle garantit notamment la clarté des objectifs pédagogiques, l’adaptation des contenus aux publics accompagnés, la qualification de nos intervenants, ainsi que la prise en compte systématique des retours des participants pour améliorer en continu nos actions.
+            </p>
+          </div>
+          <div className="formations-qualiopi-logo-wrapper" aria-hidden="true">
+            <img
+              src="/assets/images/LogoQualiopiCouleurs.png"
+              alt="Logo Qualiopi - certification qualité"
+              className="formations-qualiopi-logo"
+              loading="lazy"
+            />
+          </div>
+        </section>
 
         <section className="formations-info-card">
           <h3>Informations pratiques</h3>
