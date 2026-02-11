@@ -87,7 +87,7 @@ const NosFormations = () => {
                 </ul>
 
                 <a 
-                  href="/pdfs/2026_REC_x_Programme-Recruter-et-Integrer-un-collaborateur.pdf" 
+                  href="/assets/pdfs/2026_REC_x_Programme-Recruter-et-Integrer-un-collaborateur.pdf" 
                   download 
                   className="cta-button hero-cta-button formations-dates-button"
                 >
