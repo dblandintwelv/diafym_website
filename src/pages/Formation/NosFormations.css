@@ -78,6 +78,7 @@
   text-align: left;
 }
 
+
 .formations-dates-card::before {
   content: "";
   position: absolute;
@@ -122,18 +123,58 @@
   background-color: #725AC1;
 }
 
-.formations-dates-button {
+/* Surcharge le sélecteur universel * de Metiers.css qui applique text-align: justify */
+.formations-dates-card .formations-dates-button,
+.formations-dates-card a.formations-dates-button,
+.formations-dates-card a.cta-button.formations-dates-button,
+.formations-dates-card a.hero-cta-button.formations-dates-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-top: 1.4rem;
   width: 100%;
   max-width: 100%;
+  white-space: normal;
+  word-spacing: normal;
+  letter-spacing: normal;
+  text-align: center;
+  text-align-last: center;
+  text-justify: none;
+}
+
+.formations-dates-card .formations-dates-button span,
+.formations-dates-card a.formations-dates-button span,
+.formations-dates-card a.cta-button.formations-dates-button span,
+.formations-dates-card a.hero-cta-button.formations-dates-button span {
+  white-space: normal;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 
 @media (max-width: 768px) {
   .formations-dates-card {
     width: 100%;
+  }
+
+  .formations-dates-card .formations-dates-button,
+  .formations-dates-card a.formations-dates-button,
+  .formations-dates-card a.cta-button.formations-dates-button,
+  .formations-dates-card a.hero-cta-button.formations-dates-button {
+    white-space: normal;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-align: center;
+    text-align-last: center;
+  }
+
+  .formations-dates-card .formations-dates-button span,
+  .formations-dates-card a.formations-dates-button span,
+  .formations-dates-card a.cta-button.formations-dates-button span,
+  .formations-dates-card a.hero-cta-button.formations-dates-button span {
+    white-space: normal;
+    word-spacing: normal;
+    letter-spacing: normal;
+    display: inline;
   }
 }
 
@@ -312,5 +353,15 @@
 
 .hero-cta-button:hover .hero-cta-icon-svg {
   fill: #725AC1 !important;
+}
+
+/* Règle finale pour surcharger le sélecteur universel * de Metiers.css sur les boutons de dates */
+.formations-dates-card a.cta-button.hero-cta-button.formations-dates-button,
+.formations-dates-card a.cta-button.hero-cta-button.formations-dates-button span {
+  text-align: center;
+  text-align-last: center;
+  word-spacing: normal;
+  letter-spacing: normal;
+  text-justify: none;
 }
 
